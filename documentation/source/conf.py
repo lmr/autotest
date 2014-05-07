@@ -32,7 +32,6 @@ _excluded_paths.append('%s/utils' % _api_dir)
 _excluded_paths = " ".join(_excluded_paths)
 
 _sphinx_apidoc = "%s -o %s %s %s" % (_sphinx_apidoc, _output_dir, _api_dir, _excluded_paths)
-print(_sphinx_apidoc)
 _status, _output = commands.getstatusoutput(_sphinx_apidoc)
 if _status:
     raise DocBuildError("API rst auto generation failed: %s" % _output)
